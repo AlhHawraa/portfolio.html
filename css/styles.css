@@ -1,0 +1,270 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+ :root {
+  --primary-color: #e88cae;
+  --secondary-color: #f6cadd;
+  --text-on-primary: #fff;
+  --text-primary: #2b2b2b;
+  --text-secondary: #555;
+  --background-color: #fff6f8;
+  --font-weight-bold: 700;
+  --font-size-base: 16px;
+}
+
+body {
+  font-family: 'Mozilla Text', sans-serif;
+  font-weight: 400; /* regular weight */
+  font-size:  var(--font-size-base); /* normal text size */
+  line-height: 1.6; /* spacing between lines */
+  background-color: var(--background-color);
+}
+
+h1 {
+  font-weight: var(--font-weight-bold);
+  font-size: 30px;
+}
+
+h2 {
+  font-weight: var(--font-weight-bold);
+  font-size: 24px;
+}
+
+h3 {
+  font-weight: var(--font-weight-bold);
+  font-size: 18px;
+}
+a {
+  color: #c93b6d; /* dark pink */
+}
+
+a:visited {
+  color: var(--primary-color); /* purple when already visited */
+}
+
+a:hover,
+a:focus {
+  color: var(--text-primary); /* turns black on hover */
+  text-decoration: underline; /* gives a polished feel */
+}
+
+a:active {
+  color: var(--secondary-color); /* your main pink while clicking */
+}
+button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* background color, font color, and removes text underline */
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  text-decoration: none;
+  /* spacing inside the button */
+  padding: 10px;
+  /* rounded corners */
+  border-radius: 3px;
+  /* bottom border in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* font size */
+  font-size: 16px;
+}
+
+button:hover, button:focus {
+  /* hand cursor on hover */
+  cursor: pointer;
+  /* lightens button by reducing opacity */
+  opacity: 0.8;
+}
+.button__secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+}
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+.page-footer {
+  clear: both;
+}
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column; /* stacks text on top, icons underneath */
+  text-align: center;  
+}
+.social-media img {
+  width: 30px;
+  height: auto;
+  margin: 0 5px;
+}
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  align-items: center;      /* optional: vertical centering */
+}
+.page-header__item {
+  flex: 0 1 200px;          /* grow 0, shrink 1, basis 200px */
+}
+.page-header__item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.page-header__item:last-child {
+  flex-grow: 1;             /* can expand to fill the row */
+  text-align: right;        /* right-align inline children */
+}
+.navigation-list {
+  list-style-type: none;
+  margin: 0;                /* remove default ul spacing */
+  padding: 0;
+}
+
+.navigation-list li {
+  display: inline-block;    /* line items up in a row */
+  margin-left: 15px;        /* spacing between items */
+}
+/* Fallback for older browsers */
+.grid__item {
+  display: inline-block;
+  width: 33%;
+}
+
+/* Modern browsers with grid support */
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0;
+  }
+
+  .grid__item {
+    background-color: var(--secondary-color);
+    width: auto;
+    min-height: auto;
+    margin: 0;
+  }
+
+  .grid__item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid__item {
+  background-color: var(--secondary-color);
+  padding: 20px;
+}
+.grid__item:last-child {
+  grid-column: 3 / 3;
+  grid-row: 1 / 3;
+}
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+.button,
+button {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: opacity 0.2s; /* <-- new shorthand */
+}
+
+.button:hover,
+.button:focus,
+button:hover,
+button:focus {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes color-change {
+  from { fill: #ff7a1a; }
+  to   { fill: #ffd65c; }
+}
+
+.cloud-front {
+  animation: 28s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from { transform: translate(0px, 0px); }
+  to   { transform: translate(180px, 0px); }
+}
+
+.cloud-back {
+  animation: 32s cloud-move-reverse infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from { transform: translate(160px, 0px); }
+  to   { transform: translate(-40px, 0px); }
+}
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content svg {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
