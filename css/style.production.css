@@ -15,7 +15,7 @@ body {
   font-weight: 400; /* regular weight */
   font-size:  16px; /* normal text size */
   line-height: 1.6; /* spacing between lines */
-  background-color: #fff6f8;
+  background-color: linear-gradient(180deg, #fff6f8 0%, #fde6ee 100%);
 }
 
 h1 {
@@ -63,7 +63,7 @@ button {
   color: #fff;
   text-decoration: none;
   /* spacing inside the button */
-  padding: 10px;
+  padding: 30px;
   /* rounded corners */
   border-radius: 3px;
   /* bottom border in RGBA format */
@@ -245,11 +245,11 @@ button:hover, button:focus {
   color: #fff;
   text-decoration: none;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 40px; /* Increased value for more roundness */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   -webkit-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
-  transition: opacity 0.2s; /* <-- new shorthand */
+  transition: opacity 0.2s;
 }
 button {
   border: none;
@@ -259,11 +259,11 @@ button {
   color: #fff;
   text-decoration: none;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 40px; /* Increased value for more roundness */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   -webkit-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
-  transition: opacity 0.2s; /* <-- new shorthand */
+  transition: opacity 0.2s;
 }
 
 .button:hover,
@@ -395,4 +395,13 @@ button:focus {
 }
 .contact-form input[type="submit"]:hover {
   opacity: 0.9;
+}
+.page-header {
+  background: -webkit-gradient(linear, left top, right top, from(#fde6ee), to(#fff6f8));
+  background: -o-linear-gradient(left, #fde6ee 0%, #fff6f8 100%);
+  background: linear-gradient(90deg, #fde6ee 0%, #fff6f8 100%);
+  border-radius: 12px;
+  padding: 16px 20px;       /* keeps it comfy */
+  -webkit-box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+          box-shadow: 0 6px 16px rgba(0,0,0,0.05);
 }
