@@ -268,3 +268,66 @@ button:focus {
   max-width: 100%;
   height: auto;
 }
+.contact-page {
+  max-width: 720px;   /* size constraint so centering works */
+  margin: 0 auto;     /* centers the box itself */
+  padding: 24px 16px; /* breathing room inside the box */
+}
+.contact-page h1,
+.contact-info {        /* or whatever element wraps the text */
+  text-align: center;
+}
+.contact-form form {
+  max-width: 480px;
+  margin: 0 auto;   
+   }   /* centers that block inside the wrapper */
+/* Clean 2-column layout for the form */
+.contact-form form {
+  display: grid;
+  grid-template-columns: 120px 1fr;  /* col 1 = labels, col 2 = inputs */
+  gap: 10px 14px;
+  width: min(640px, 100%);
+  margin: 12px auto;                 /* center the whole form block */
+}
+
+.contact-form label {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  min-height: 110px;                 /* wider/taller message box */
+  resize: vertical;                  /* user can expand if needed */
+}
+
+/* Submit centered under the fields */
+.contact-form input[type="submit"] {
+  grid-column: 1 / -1;               /* span both columns */
+  justify-self: center;
+}
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form input[type="submit"] {
+  background: #e88cae;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contact-form input[type="submit"]:hover {
+  opacity: 0.9;
+}
