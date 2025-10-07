@@ -405,3 +405,221 @@ button:focus {
   -webkit-box-shadow: 0 6px 16px rgba(0,0,0,0.05);
           box-shadow: 0 6px 16px rgba(0,0,0,0.05);
 }
+/* ================================
+   🌟 GENERAL FIXES
+   ================================ */
+
+/* Logo — use relative path sizing */
+.page-header img {
+  width: 120px;
+  height: auto;
+}
+
+
+/* ================================
+   📱 HOME PAGE MOBILE LAYOUT
+   ================================ */
+
+@media (max-width: 640px) {
+  /* Header */
+  .page-header {
+    padding: 12px 16px;
+  }
+
+  /* Nav — wrap and center */
+  .navigation-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 12px;
+    padding: 0;
+    margin-top: 8px;
+  }
+
+  .navigation-list__item a {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  /* Hero section */
+  .hero,
+  .intro,
+  .about-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  /* Profile image */
+  .hero__photo,
+  .profile-photo,
+  .about__image {
+    width: 72vw;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* Headings & text */
+  h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+    margin: 4px 0 8px;
+  }
+
+  .tagline,
+  .intro p {
+    font-size: 1rem;
+    max-width: 28ch;
+    margin: 0 auto;
+  }
+
+  /* Buttons */
+  .button,
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
+
+  /* Social icons */
+  .social-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .social-list img,
+  .social-list svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Container padding */
+  .container,
+  main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+/* ================================
+   💌 CONTACT PAGE STYLES
+   ================================ */
+
+.contact-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.contact-page h1 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Two-column desktop layout */
+.contact-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 32px 1.2fr;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+/* Info block */
+.contact-info .button {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+/* Form box styling */
+.contact-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Form rows */
+.form-row {
+  display: -ms-grid;
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.form-row label {
+  font-weight: 600;
+}
+
+/* Inputs & textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Submit button */
+.contact-form .button,
+.contact-form input[type="submit"] {
+  width: 100%;
+  padding: 14px;
+}
+
+/* Mobile layout */
+@media (max-width: 640px) {
+  .contact-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-page {
+    padding: 16px;
+  }
+
+  .contact-form {
+    padding: 16px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+}
